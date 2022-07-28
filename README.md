@@ -155,6 +155,7 @@ provided on REST API, we will try to add a migration process for it
 - [ ] Make some videos about the migration process
 - [ ] Test plugin with more real data
 - [ ] Add a plugin setting to migrate posts with any status like trash items
+- [ ] Finish PHPStan level 5
 - [ ] Support Super table on migration table
 - [ ] Add navigation item migration
 
