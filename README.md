@@ -91,7 +91,12 @@ To migrate a Gutenberg body to Craft's Matrix, do this:
 ### Menu
 This plugin can migrate menus to [Structure Sections](https://craftcms.com/docs/4.x/entries.html#structures) or [Navigation](https://plugins.craftcms.com/navigation) plugin.
 - WordPress menu Id and link are migrated.
-- This plugin tries to convert an internal WordPress link address to Craft internal link. for example, if there is a WordPress link item for a post, we try to find that post on Craft and point link to that post.
+
+### Navigation
+This plugin can migrate navigation to [Structure Sections](https://craftcms.com/docs/4.x/entries.html#structures) or [Navigation](https://plugins.craftcms.com/navigation) plugin.
+- WordPress navigation Id and link are migrated.
+
+When migrating menu and navigation, this plugin tries to convert an internal WordPress link address to Craft internal link. for example, if there is a WordPress link for a post, we try to find that post on Craft -as an entry- and point the link to that entry.
 
 ## Supported WordPress plugins:
 ### Advanced Custom Fields
@@ -157,7 +162,7 @@ provided on REST API, we will try to add a migration process for it
 - [x] Add a plugin setting to migrate posts with any status like trash items
 - [ ] Finish PHPStan level 5
 - [ ] Support Super table on migration table
-- [ ] Add navigation item migration
+- [x] Add navigation item migration
 
 ## Contact
 Feel free to contact me by email at vnali.dev@gmail.com or direct message me via 'vnali' on [Craft CMS Discord](https://craftcms.com/discord) channel.
