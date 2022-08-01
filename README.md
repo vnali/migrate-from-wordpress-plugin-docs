@@ -6,7 +6,7 @@ This plugin is in the development phase, so double-check migrated data before us
 ## Requirement
 - WordPress 6 with REST API support
   - This plugin is tested with WordPress 6.0. WordPress introduced REST API from 4.7, so technically, it is possible to provide migration functionality from that version
-- Enabling basic authentication on the WordPress site
+- Enabling basic authentication or application password on the WordPress site
   - WordPress doesn't provide basic authentication, so you can use third parties plugins like [WordPress Rest API Authentication](https://wordpress.org/plugins/wp-rest-api-authentication) to connect to REST API
 - WordPress user to read from REST API.
 - The latest version of Craft 4
@@ -35,12 +35,15 @@ After mapping WordPress to Craft fields, this plugin:
 ### User
 These data can be converted to [Craft's users](https://craftcms.com/docs/4.x/users.html):
 - User Id
+- user's email
+  - by default user's email is not provided in REST API -probably because of user privacy-. But there are some solutions to add emails like [here](https://wordpress.stackexchange.com/q/278882) -don't do this on a public network, though-. 
+  - you can specify the email attribute returned in REST API in the plugin migrate-from-wordpress.php config file like `'emailAttribute' => 'user_email'` 
+  - if the user's email is not provided we fill the email attribute with a sample email.
 - User link on WordPress site
 - User's description, avatar URL, website
 - WordPress site URL
 - Advanced Custom fields for users
 
-Currently, the user's email is not migrated, so we generate a random email for each user. 
 Also default status of migrated users is inactive.
 
 ### Media
@@ -59,14 +62,15 @@ Tags and Categories in WordPress can be converted to Craft's entries, [categorie
 - Tags in Craft have no hierarchy, so taxonomies with parent->child relationship should be migrated to Craft entries or categories.
 
 ### Post and Page
-Each post and page can be migrated to [entries](https://craftcms.com/docs/4.x/entries.html). These data are migrated for posts and pages:
-- Post status on WordPress (publish, private, draft, ....)
-- if a post is password protected
-- Post Id
-- Post link on WordPress site
-- WordPress site URL
-- Post title, created time, author, post excerpt, and body -Gutenberg is supported-, tags, and categories
-- Advanced Custom fields
+- Each post and page can be migrated to [entries](https://craftcms.com/docs/4.x/entries.html). These data are migrated for posts and pages:
+  - Post status on WordPress (publish, private, draft, ....)
+  - if a post is password protected
+  - Post Id
+  - Post link on WordPress site
+  - WordPress site URL
+  - Post title, created time, author, post excerpt, and body -Gutenberg is supported-, tags, and categories
+  - Advanced Custom fields
+ - There is a plugin setting that you can specify a password for password-protected fields. If the password doesn't match, the content of that post is returned as an empty paragraph
 
 Please remember only to delete not needed data after all item migration is completed. We use data like post Id, post link, and ... for the migration process.
 
@@ -130,6 +134,7 @@ return [
     'allowHttpWordPressSite' => false,  // by default, the protocol of the WordPress site must be HTTPS. you can allow connecting to the HTTP WordPress site here. - we send sensitive data like your WordPress account, so do it only when the WordPress site is on a local or trusted network-
     'allowReusingToken' => false, // only on dev environment it can be set to true to test feed values quickly. When set to false, the feed URL's token is valid once and regenerates itself.
     'cacheFeedValuesSeconds' => 0, // how many seconds feed's values are cached. the default value is 0, so always cached data is returned. For development purposes, we use 1 to see the latest changes.
+    'emailAttribute' => 'email' // email attribute is not provided in REST API, but if the email is registered as an extra field, you can set the email attribute here.
 ];
 ```
  
