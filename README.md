@@ -4,8 +4,8 @@ This is a [Craft CMS](https://craftcms.com/) plugin for importing content from W
 This plugin is in the development phase, so double-check migrated data before using it on production.
 
 ## Requirement
-- WordPress 6 with REST API support
-  - This plugin is tested with WordPress 6.0. WordPress introduced REST API from 4.7, so technically, it is possible to provide migration functionality from that version
+- WordPress with REST API support
+  - WordPress introduced REST API from 4.7, so technically, it is possible to provide migration functionality from that version
 - Enabling basic authentication or application password on the WordPress site
   - WordPress doesn't provide basic authentication, so you can use third parties plugins like [WordPress Rest API Authentication](https://wordpress.org/plugins/wp-rest-api-authentication) to connect to REST API
 - WordPress user to read from REST API.
