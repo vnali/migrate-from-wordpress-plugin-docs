@@ -8,7 +8,6 @@ This plugin is in the development phase, so double-check migrated data before us
   - WordPress introduced REST API from 4.7, so technically, it is possible to provide migration functionality from that version
 - Enabling basic authentication or application password on the WordPress site
   - WordPress doesn't provide basic authentication, so you can use third parties plugins like [WordPress Rest API Authentication](https://wordpress.org/plugins/wp-rest-api-authentication) to connect to REST API
-- WordPress user to read from REST API.
 - The latest version of Craft 4
 
 ## How migration works
