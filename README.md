@@ -140,8 +140,15 @@ return [
 - On the reset tab of the plugin setting, you can quickly clear data on Craft CMS and other data related to the migration process to start the migration process again. Resetting data related to Craft CMS is only available on the Dev environment.
 
 ## Troubleshooting
-when running a feed doesn't return the expected result, try to debug that feed on {admin/feed-me/feeds} page -by clicking on the setting icon and then debug button-. 
-If debug returns 'No feed items to process.' copy that feed URL and see what that URL returns on the browser. If there is an error, report that Log on Github issue or send the full Log to vnali.dev@gmail.com.
+> Running a feed doesn't return the expected result
+
+Try to debug that feed on {admin/feed-me/feeds} page -by clicking on the setting icon and then debug button-. If debug returns 'No feed items to process.' copy that feed URL and see what that URL returns on the browser. If there is an error, report that Log on Github issue or send the full Log to vnali.dev@gmail.com.
+> plugin returns this validation error: 'Authorization header not received. Either authorization header was not sent or it was removed by your server due to security reasons.'
+
+We saw this on some environments and some of [these solutions](https://stackoverflow.com/a/54729344) like adding `SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1` to top of .htaccess worked for us. -make sure you apply these changes only on local environments-   
+> I enabled basic auth, but I can't connect to rest API and get an error like 'Sorry, you are not allowed to access REST API.'
+
+we see this behavior when the permalink setting on the WordPress site is set to Plain format. You can change this to other permalink options and then change REST API Endpoint to 'wp-json/wp/v2' or you can use the application password authentication method
 
 ## License & Pricing
 This plugin is licensed under MIT and is free of charge. 
