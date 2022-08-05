@@ -123,6 +123,7 @@ When running a feed with those fields, run that feed two times. One to create th
 supported plugins available in plugin stores are:
 - [Redactor](https://plugins.craftcms.com/redactor) // on the mapping table, you can choose to migrate a WordPress attribute/field to Redactor
 - [Ckeditor](https://plugins.craftcms.com/ckeditor) // on the mapping table, you can choose to migrate a WordPress attribute/field to Ckeditor
+- [Super Table](https://plugins.craftcms.com/super-table) // on the mapping table, you can choose to migrate a WordPress attribute/field to Super Table
 
 ## Plugin Settings
 you can add a file named migrate-from-wordpress.php
@@ -172,7 +173,7 @@ provided on REST API, we will try to add a migration process for it
 - [ ] Test plugin with more real data
 - [x] Add a plugin setting to migrate posts with any status like trash items
 - [ ] Finish PHPStan level 5
-- [ ] Support Super table on migration table
+- [x] Support Super table on mapping table
 - [x] Add navigation item migration
 
 ## Contact
