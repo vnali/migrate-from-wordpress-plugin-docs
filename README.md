@@ -178,4 +178,3 @@ provided on REST API, we will try to add a migration process for it
 
 ## Contact
 Feel free to contact me by email at vnali.dev@gmail.com or direct message me via 'vnali' on [Craft CMS Discord](https://craftcms.com/discord) channel.
-Clear cache if you cannot see the latest changes made in WordPress files
