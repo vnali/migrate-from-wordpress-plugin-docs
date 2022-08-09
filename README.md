@@ -69,7 +69,7 @@ Tags and Categories in WordPress can be converted to Craft's entries, [categorie
   - WordPress site URL
   - Post title, created time, author, post excerpt, and body -Gutenberg is supported-, tags, and categories
   - Advanced Custom fields
- - There is a plugin setting that you can specify a password for password-protected fields. If the password doesn't match, the content of that post is returned as an empty paragraph
+ - There is a plugin setting that you can specify a password for password-protected WordPress items. If the password doesn't match, the content of that post is returned as an empty paragraph
 
 Please remember only to delete not needed data after all item migration is completed. We use data like post Id, post link, and ... for the migration process.
 
@@ -170,7 +170,7 @@ Please let us know which WordPress plugin you are using. If its data is availabl
 
 > Is a multi-language WordPress site supported?
 
-Currently, no, but we write this plugin to support multi-language later. please let us know which plugin you are using for that and if data is
+Currently, no, but we wrote this plugin to support multi-language later. please let us know which plugin you are using for that and if data is
 provided on REST API, we will try to add a migration process for it
 
 ## ToDo
