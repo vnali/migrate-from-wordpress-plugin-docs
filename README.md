@@ -119,6 +119,19 @@ When running a feed with those fields, run that feed two times. One to create th
   </p>
 - Currently, repeater fields are not tested.
 
+### Yoast SEO
+We provide data for [Yoast SEO](https://wordpress.org/plugins/wordpress-seo) on feed values created by this plugin
+but you should use the map step of the feed-me plugin to map these values to Craft fields by yourself.
+
+For example, to import pages and Yoast SEO OG image data from WordPress to Craft's entries and [SEOmatic plugin](https://plugins.craftcms.com/seomatic), follow these steps:
+
+- make sure you migrated files by this plugin because we are going to use imported files in next steps
+- enable 'Show Yoast SEO data in feed values' on this plugin's setting page
+- create an SEO Settings field and add it to the field layout of an entry type
+- migrate pages by this plugin and edit created feed
+- on the feed-me mapping step, change the value of the 'General - SEO Custom Image' field to 'yoastSEO/value/og_image/url' and set 'Create asset from URL, if exists:' to 'use existing asset'
+- after running the feed, OG images from WordPress pages are now set for 'SEO Image Source' of imported entries on the Craft site
+
 ## Supported Craft CMS plugins
 supported plugins available in plugin stores are:
 - [Redactor](https://plugins.craftcms.com/redactor) // on the mapping table, you can choose to migrate a WordPress attribute/field to Redactor
@@ -160,7 +173,7 @@ we see this behavior when the permalink setting on the WordPress site is set to 
 This plugin is licensed under MIT and is free of charge. 
 
 ## Donation
-If this plugin was useful to you, saved your time, and made the migration process easier for you, you can donate via [this link](https://github.com/vnali/migrate-from-wordpress-plugin-docs/blob/main/donate.md) soon.
+If this plugin was useful to you, saved your time, and made the migration process easier for you, you can donate via [this link](https://github.com/vnali/migrate-from-wordpress-plugin-docs/blob/main/donate.md).
 
 ## FAQ
 
