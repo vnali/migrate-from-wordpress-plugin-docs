@@ -1,4 +1,8 @@
 ## Introduction
+
+> [!CAUTION]
+> You should use the [wp-import](https://github.com/craftcms/wp-import) to migrate data from WordPress to Craft 5, as this plugin is outdated.
+
 This is a [Craft CMS](https://craftcms.com/) plugin for importing content from WordPress to Craft CMS based on Craft's [Feed Me](https://plugins.craftcms.com/feed-me) plugin. 
 
 This plugin is in the development phase, so double-check migrated data before using it on production.
